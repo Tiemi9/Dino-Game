@@ -47,8 +47,13 @@ function jump() {
 }
 
 function createCactus() {
+    
     const cactus = document.createElement('div'); //criando uma div no html
     let cactusPosition = 1000; //posição inicial do cacto
+    
+    //criando uma constante para gerar números aleatórios para intervalos dos cactos
+    let randomTime = Math.random() * 6000; //math serve para fazer algumas operacões matemáticas
+    //console.log(randomTime); TESTE PARA VER OS NUMEROS ALEATÓRIOS
 
     cactus.classList.add('cactus'); //criando uma classe para a div
     cactus.style.left = cactusPosition + 'px'; 
