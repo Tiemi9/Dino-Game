@@ -51,13 +51,21 @@ function createCactus() {
     let cactusPosition = 1000; //posição inicial do cacto
 
     cactus.classList.add('cactus'); //criando uma classe para a div
-    
+    cactus.style.left = cactusPosition + 'px'; 
     background.appendChild(cactus); //colocando a div dentro da div background
 
-    //fazendo o cacto se mover para a esquerda, aqui poderá aumentar o diminuir a velocidade conforme tempo de jogo
+    //fazendo o cacto se mover para a esquerda
     let leftInterval = setInterval(() => {
-        cactusPosition -= 10;
-        cactus.style.left = cactusPosition + 'px';
+       
+
+        //para tirar o cacto que passou pelo dino
+        if(cactusPosition < -60) {
+            clearInterval(leftInterval); 
+            background.removeChild(cactus); //remove a div do background
+        } else {
+            cactusPosition -= 10; //velocidade que se move para a esquerda, aqui poderá aumentar o diminuir a velocidade conforme tempo de jogo
+            cactus.style.left = cactusPosition + 'px';
+        }
     }, 20);
 }
 
