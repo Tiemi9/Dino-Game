@@ -5,3 +5,11 @@
     position: absolute;
     bottom: 0;
 }
+
+.cactus {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(rgb(214, 113, 218), rgb(68, 236, 213));
+    position: absolute;
+    bottom: 0;
+}
