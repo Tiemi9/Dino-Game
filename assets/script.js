@@ -10,11 +10,18 @@ function handleKeyUp(event) {
 function jump() {
     let position = 0; //posição inicial
 
-    //pula ao apertat espaço
+    //pula ao apertar espaço 
     let upInterval = setInterval(() => {
+        //determinar limite de altura do pulo
+      if(position >= 150) {
+
+      } else {
+      
+        //subindo
         position += 20;
 
         dino.style.bottom = position + 'px';
+      }
     }, 20); //será executado a cada 20ms
 }
 
