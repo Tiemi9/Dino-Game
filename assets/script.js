@@ -47,12 +47,18 @@ function jump() {
 }
 
 function createCactus() {
-    const cactus = document.createElement('div');
-    let cactusPosition = 1000;
+    const cactus = document.createElement('div'); //criando uma div no html
+    let cactusPosition = 1000; //posição inicial do cacto
 
-    cactus.classList.add('cactus');
-    cactus.style.left = cactusPosition + 'px';
-    background.appendChild(cactus);
+    cactus.classList.add('cactus'); //criando uma classe para a div
+    
+    background.appendChild(cactus); //colocando a div dentro da div background
+
+    //fazendo o cacto se mover para a esquerda, aqui poderá aumentar o diminuir a velocidade conforme tempo de jogo
+    let leftInterval = setInterval(() => {
+        cactusPosition -= 10;
+        cactus.style.left = cactusPosition + 'px';
+    }, 20);
 }
 
 createCactus();
