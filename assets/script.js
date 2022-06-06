@@ -12,14 +12,20 @@ function jump() {
 
     //pula ao apertar espaço 
     let upInterval = setInterval(() => {
-        //determinar limite de altura do pulo
+        
+      //determina limite de altura do pulo
       if(position >= 150) {
-
-      } else {
+        clearInterval(upInterval); //limpando o intervalo
       
+        //descendo
+        let downInterval = setInterval(() => {
+            position -=20;
+            dino.style.bottom = position + 'px';
+        }, 20);
+
+    } else {
         //subindo
         position += 20;
-
         dino.style.bottom = position + 'px';
       }
     }, 20); //será executado a cada 20ms
