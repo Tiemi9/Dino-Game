@@ -72,6 +72,8 @@ function createCactus() {
             cactus.style.left = cactusPosition + 'px';
         }
     }, 20);
+
+    setTimeout(createCactus, randomTime); //para executar uma função após um tempo determinado (nesse caso aleatório)
 }
 
 createCactus();
