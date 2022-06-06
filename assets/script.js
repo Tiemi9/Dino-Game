@@ -1,14 +1,21 @@
 const dino = document.querySelector('.dino');
 
+let isJumping = false;
+
 function handleKeyUp(event) {
     if(event.keyCode === 32) {/*keyCode = cód. do teclado verificar mais em keyCode.info*/
-    
+   
+    //para que não haja falha no pulo, ou pulo sobre pulo
+    if(!isJumping) {
     jump();
+      }
     }
 }
 
 function jump() {
     let position = 0; //posição inicial
+
+    isJumping = true; //boleano para indicar momento de pular
 
     //pula ao apertar espaço 
     let upInterval = setInterval(() => {
@@ -20,9 +27,10 @@ function jump() {
         //descendo
         let downInterval = setInterval(() => {
             
-            //determina limite de descida
+             //determina limite de descida
             if(position <= 0) {
                 clearInterval(downInterval);
+                isJumping = false; //boleano para indicar que não esta pulando
             } else {
             position -=20;
             dino.style.bottom = position + 'px';
