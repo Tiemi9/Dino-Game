@@ -1,0 +1,7 @@
+.dino {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(rgb(75, 236, 75), rgb(68, 68, 236));
+    position: absolute;
+    bottom: 0;
+}
