@@ -1,9 +1,10 @@
 const dino = document.querySelector('.dino');
+const background = document.querySelector('.background');
 
 let isJumping = false;
 
 function handleKeyUp(event) {
-    if(event.keyCode === 32) {/*keyCode = cód. do teclado verificar mais em keyCode.info*/
+    if(event.keyCode === 32) {//keyCode = cód. do teclado verificar mais em keyCode.info
    
     //para que não haja falha no pulo, ou pulo sobre pulo
     if(!isJumping) {
@@ -44,6 +45,17 @@ function jump() {
       }
     }, 20); //será executado a cada 20ms
 }
+
+function createCactus() {
+    const cactus = document.createElement('div');
+    let cactusPosition = 1000;
+
+    cactus.classList.add('cactus');
+    cactus.style.left = cactusPosition + 'px';
+    background.appendChild(cactus);
+}
+
+createCactus();
 
 document.addEventListener('keyup', handleKeyUp); 
     
