@@ -62,16 +62,21 @@ function createCactus() {
     //fazendo o cacto se mover para a esquerda
     let leftInterval = setInterval(() => {
        
-
         //para tirar o cacto que passou pelo dino
         if(cactusPosition < -60) {
             clearInterval(leftInterval); 
             background.removeChild(cactus); //remove a div do background
-        } else {
-            cactusPosition -= 10; //velocidade que se move para a esquerda, aqui poderá aumentar o diminuir a velocidade conforme tempo de jogo
+           
+            //para que reconheça quando o cacto está na posição do dinossauro para que dê game over
+        } else if (cactusPosition > 0 && cactusPosition < 60 ) { 
+            clearInterval(leftInterval); //limpar o intervalo de ir para a esquerda
+            document.body.innerHTML = '<h1 class="game-over">Fim de Jogo</h1>'
+        } else  {
+            cactusPosition -= 5; //velocidade que se move para a esquerda, aqui poderá aumentar o diminuir a velocidade conforme tempo de jogo
             cactus.style.left = cactusPosition + 'px';
         }
     }, 20);
+
 
     setTimeout(createCactus, randomTime); //para executar uma função após um tempo determinado (nesse caso aleatório)
 }
