@@ -36,14 +36,14 @@ function jump() {
             position -=20;
             dino.style.bottom = position + 'px';
             }
-        }, 20);
+        }, 30);
 
     } else {
         //subindo
         position += 20;
         dino.style.bottom = position + 'px';
       }
-    }, 20); //será executado a cada 20ms
+    }, 30); //será executado a cada 20ms
 }
 
 function createCactus() {
@@ -68,7 +68,7 @@ function createCactus() {
             background.removeChild(cactus); //remove a div do background
            
             //para que reconheça quando o cacto está na posição do dinossauro para que dê game over
-        } else if (cactusPosition > 0 && cactusPosition < 60 ) { 
+        } else if (cactusPosition > 0 && cactusPosition < 50 && position < 50) { //position refere-se ao dino
             //game over
             clearInterval(leftInterval); //limpar o intervalo de ir para a esquerda
             document.body.innerHTML = '<h1 class="game-over">Fim de Jogo</h1>' //adicionando um titulo ao HTML para o fim de jogo
