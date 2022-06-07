@@ -1,7 +1,7 @@
-const dino = document.querySelector('.dino');
+const lhama = document.querySelector('.lhama');
 const background = document.querySelector('.background');
 
-let position = 0; //posição inicial do dino (essa variavél foi criada dentro da function jump, porém seu uso se faz necessario para outras funções)
+let position = 0; //posição inicial da lhama (essa variavél foi criada dentro da function jump, porém seu uso se faz necessario para outras funções)
 let isJumping = false;
 
 function handleKeyUp(event) {
@@ -34,14 +34,14 @@ function jump() {
                 isJumping = false; //boleano para indicar que não esta pulando
             } else {
             position -=20;
-            dino.style.bottom = position + 'px';
+            lhama.style.bottom = position + 'px';
             }
-        }, 30);
+        }, 20);
 
     } else {
         //subindo
         position += 20;
-        dino.style.bottom = position + 'px';
+        lhama.style.bottom = position + 'px';
       }
     }, 30); //será executado a cada 20ms
 }

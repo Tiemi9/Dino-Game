@@ -2,18 +2,19 @@ body {
     background: rgba(199, 197, 197, 0.856);
 }
 
-.dino {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(rgb(75, 236, 75), rgb(68, 68, 236));
+.lhama {
+    width: 100px;
+    height: 100px;
+    background-image: url(../assets/img/lhama.png);
     position: absolute;
     bottom: 0;
 }
 
 .cactus {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(rgb(214, 113, 218), rgb(68, 236, 213));
+    width: 60px;
+    height: 60px;
+    padding: 1px;
+    background-image: url(../assets/img/cactus1.png);
     position: absolute;
     bottom: 0;
 }
