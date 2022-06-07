@@ -43,7 +43,7 @@ function jump() {
         position += 20;
         lhama.style.bottom = position + 'px';
       }
-    }, 30); //será executado a cada 20ms
+    }, 20); //será executado a cada 20ms
 }
 
 function createCactus() {
