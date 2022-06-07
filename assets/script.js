@@ -1,6 +1,7 @@
 const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
 
+let position = 0; //posição inicial do dino (essa variavél foi criada dentro da function jump, porém seu uso se faz necessario para outras funções)
 let isJumping = false;
 
 function handleKeyUp(event) {
@@ -14,8 +15,7 @@ function handleKeyUp(event) {
 }
 
 function jump() {
-    let position = 0; //posição inicial
-
+    
     isJumping = true; //boleano para indicar momento de pular
 
     //pula ao apertar espaço 
@@ -69,8 +69,9 @@ function createCactus() {
            
             //para que reconheça quando o cacto está na posição do dinossauro para que dê game over
         } else if (cactusPosition > 0 && cactusPosition < 60 ) { 
+            //game over
             clearInterval(leftInterval); //limpar o intervalo de ir para a esquerda
-            document.body.innerHTML = '<h1 class="game-over">Fim de Jogo</h1>'
+            document.body.innerHTML = '<h1 class="game-over">Fim de Jogo</h1>' //adicionando um titulo ao HTML para o fim de jogo
         } else  {
             cactusPosition -= 5; //velocidade que se move para a esquerda, aqui poderá aumentar o diminuir a velocidade conforme tempo de jogo
             cactus.style.left = cactusPosition + 'px';
